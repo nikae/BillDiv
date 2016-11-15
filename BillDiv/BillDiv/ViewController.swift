@@ -8,6 +8,7 @@
 
 
 import UIKit
+import Foundation
 
 class ViewController: UIViewController, UITextFieldDelegate {
     
@@ -23,13 +24,22 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var twentyTipBtn: UIButton!
     @IBOutlet weak var noTipBtn: UIButton!
     
+    let orangeColor = UIColor(red: 189/255.0, green: 85/255.0, blue: 59/255.0, alpha: 1.0)
     
-    func calc(percent: Double) -> String {
+
+    func calculateBill(percent: Double) -> String {
         
         let bill = Double(totalBillText.text!)
-        let person = Double(personText.text!)
+        var person: Double = 0
+        if personText.text == "" {
+        person = 1
+        } else {
+            person = Double(personText.text!)!
+
+        }
+    
         
-        if bill != nil && person != nil {
+        if bill != nil  {
             
             let totalTip = bill! * (percent / 100)
             let totalBill = bill! + totalTip
@@ -37,11 +47,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
             keyboardDismiss()
             
             tottalBillLabel.font = UIFont(name: tottalBillLabel.font.fontName, size: 47)
-            tottalBillLabel.text = "$ \(String(format: "%.2f", (totalBill / person!)))"
+            tottalBillLabel.text = "$ \(String(format: "%.2f", (totalBill / person)))"
             perPersonLabel.text = "Per Person"
-            infoLabel.text = "Bill - $ \(bill!)\nTip - \(percent)%\nTotal - $ \(totalBill)\nPerson - \(Int(person!))\nEquals - \(tottalBillLabel.text!) per person"
+            infoLabel.text = "Bill - $ \(bill!)\nTip - $\(totalTip)\nTotal - $ \(totalBill)\nPerson - \(Int(person))\nEquals - \(tottalBillLabel.text!) per person"
             
-            print(tottalBillLabel.text)
+            print(tottalBillLabel.text ?? "0")
         } else {
             
             refreshview()
@@ -49,26 +59,48 @@ class ViewController: UIViewController, UITextFieldDelegate {
             
             tottalBillLabel.font = UIFont(name: tottalBillLabel.font.fontName, size: 12)
             tottalBillLabel.text = "FILL THE BOXES ABOVE!"
-            print(tottalBillLabel.text)
+            print(tottalBillLabel.text ?? "0")
         }
         return tottalBillLabel.text!
     }
     
     
     @IBAction func tenTipCalc(_ sender: AnyObject) {
-        _ = calc(percent: 10)
+        _ = calculateBill(percent: 10)
+      
+        tenTipBtn.backgroundColor = UIColor.darkGray
+        fifteenTipBtn.backgroundColor = orangeColor
+        twentyTipBtn.backgroundColor = orangeColor
+        noTipBtn.backgroundColor = orangeColor
+        
     }
-    
-    @IBAction func fiftTipCalc(_ sender: AnyObject) {
-        _ = calc(percent: 15)
+    func fiftTipCalc(_ sender: AnyObject) {
+        _ = calculateBill(percent: 15)
+        
+        tenTipBtn.backgroundColor = orangeColor
+        fifteenTipBtn.backgroundColor = UIColor.darkGray
+        twentyTipBtn.backgroundColor = orangeColor
+        noTipBtn.backgroundColor = orangeColor
+        
     }
     
     @IBAction func twTipCalc(_ sender: AnyObject) {
-        _ = calc(percent: 20)
+        _ = calculateBill(percent: 20)
+        
+        tenTipBtn.backgroundColor = orangeColor
+        fifteenTipBtn.backgroundColor = orangeColor
+        twentyTipBtn.backgroundColor = UIColor.darkGray
+        noTipBtn.backgroundColor = orangeColor
     }
     
     @IBAction func noTipCalc(_ sender: AnyObject) {
-        _ = calc(percent: 0)
+        _ = calculateBill(percent: 0)
+        
+        
+        tenTipBtn.backgroundColor = orangeColor
+        fifteenTipBtn.backgroundColor = orangeColor
+        twentyTipBtn.backgroundColor = orangeColor
+        noTipBtn.backgroundColor = UIColor.darkGray
     }
     
     
@@ -98,6 +130,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
         tottalBillLabel.text = ""
         perPersonLabel.text = ""
         infoLabel.text = ""
+        
+        
+        
+        tenTipBtn.backgroundColor = orangeColor
+        fifteenTipBtn.backgroundColor = orangeColor
+        twentyTipBtn.backgroundColor = orangeColor
+        noTipBtn.backgroundColor = orangeColor
+
     }
     
     

@@ -14,7 +14,6 @@
 		240A658C1DB8005400066A97 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 240A658A1DB8005400066A97 /* LaunchScreen.storyboard */; };
 		240A65971DB8005400066A97 /* BillDivTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240A65961DB8005400066A97 /* BillDivTests.swift */; };
 		240A65A21DB8005400066A97 /* BillDivUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240A65A11DB8005400066A97 /* BillDivUITests.swift */; };
-		240A65B01DB802B100066A97 /* 1476835868_free-38.png in Resources */ = {isa = PBXBuildFile; fileRef = 240A65AF1DB802B100066A97 /* 1476835868_free-38.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +47,6 @@
 		240A659D1DB8005400066A97 /* BillDivUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BillDivUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		240A65A11DB8005400066A97 /* BillDivUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillDivUITests.swift; sourceTree = "<group>"; };
 		240A65A31DB8005400066A97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		240A65AF1DB802B100066A97 /* 1476835868_free-38.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "1476835868_free-38.png"; path = "../../../../Downloads/1476835868_free-38.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +81,6 @@
 				240A65951DB8005400066A97 /* BillDivTests */,
 				240A65A01DB8005400066A97 /* BillDivUITests */,
 				240A657F1DB8005400066A97 /* Products */,
-				240A65AF1DB802B100066A97 /* 1476835868_free-38.png */,
 			);
 			sourceTree = "<group>";
 		};
@@ -191,7 +188,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = Nika;
 				TargetAttributes = {
 					240A657D1DB8005400066A97 = {
@@ -238,7 +235,6 @@
 			files = (
 				240A658C1DB8005400066A97 /* LaunchScreen.storyboard in Resources */,
 				240A65891DB8005400066A97 /* Assets.xcassets in Resources */,
-				240A65B01DB802B100066A97 /* 1476835868_free-38.png in Resources */,
 				240A65871DB8005400066A97 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,6 +334,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -387,6 +384,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
